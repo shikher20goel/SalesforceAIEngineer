@@ -5,7 +5,7 @@
     <label>ToolingAPIApp</label>
     <oauthConfig>
         <callbackUrl>https://cumulusfinancial-32f.my.salesforce.com/services/authcallback/ToolingAPI</callbackUrl>
-        <consumerKey>3MVG9GCMQoQ6rpzQx38j_MpK4gbCzaoQy13vuinRmD3SV6jzVtnGhJaL974T3D4eTNsvrdgS3d0I23342ZKC_Hp6LG</consumerKey>
+        <consumerKey></consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isClientCredentialEnabled>false</isClientCredentialEnabled>
         <isCodeCredentialEnabled>false</isCodeCredentialEnabled>

@@ -17,11 +17,23 @@
         <members>Task_Deployment_History__c</members>
         <name>CustomObject</name>
     </types>
- <types>
+  <!--  <types>
+        <members>AI_Engineer_Design_Story</members>
+        <members>AI_Engineer_Develop_the_Task</members>
+        <members>AI_Engineer_Fix_Issue</members>
+        <members>AI_Engineer_Build_Apex_Class</members>
+        <members>AI_Engineer_Build_Apex_Trigger</members>
+        <members>AI_Engineer_Build_Custom_Field</members>
+        <name>GenAiPromptTemplate</name>
+    </types>    
+    <types>
         <members>User_Story_Record_Page</members>
         <members>User_Story_Task_Record_Page</members>
+        <members>User_Story_Record_Page1</members>
+        <members>User_Story_Task_Record_Page2</members>
         <name>FlexiPage</name>
     </types>
+    -->
       <types>
         <members>UserStoryTrigger</members>
         <name>ApexTrigger</name>
@@ -30,15 +42,7 @@
         <members>ToolingAPI</members>
         <name>NamedCredential</name>
     </types>   
-    <types>
-        <members>AI_Engineer_Design_Story</members>
-        <members>AI_Engineer_Develop_the_Task</members>
-        <members>AI_Engineer_Fix_Issue</members>
-        <members>AI_Engineer_Build_Apex_Class</members>
-        <members>AI_Engineer_Build_Apex_Trigger</members>
-        <members>AI_Engineer_Build_Custom_Field</members>
-        <name>GenAiPromptTemplate</name>
-    </types>       
+   
     <types>
         <members>ToolingAPIApp</members>
         <name>ConnectedApp</name>
@@ -53,8 +57,15 @@
     </types>      
     <types>
         <members>User_Story__c</members>
+        <members>Tooling_API_Request__c</members>
         <name>CustomTab</name>
     </types>       
+
+    <types>
+        <members> User_Story_Task__c.Deploy</members>
+        <name>QuickAction</name>
+    </types>
     <version>62.0</version>
+
 </Package>
 

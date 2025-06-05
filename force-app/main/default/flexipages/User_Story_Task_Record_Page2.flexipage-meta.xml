@@ -67,16 +67,6 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.User_Story__c</fieldItem>
-                <identifier>RecordUser_Story_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
@@ -96,16 +86,6 @@
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Type_of_Task__c</fieldItem>
-                <identifier>RecordType_of_Task_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
                     <name>generativePromptTemplate</name>
                     <value></value>
                 </fieldInstanceProperties>
@@ -113,13 +93,13 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Develop_this_Custom_Field__c</fieldItem>
-                <identifier>RecordDevelop_this_Custom_Field__cField</identifier>
+                <fieldItem>Record.Develop_this_Apex_Class__c</fieldItem>
+                <identifier>RecordDevelop_this_Apex_Class_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Type_of_Task__c}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>CustomField</rightValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>ApexClass</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -135,7 +115,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Develop_this_Apex_Trigger__c</fieldItem>
-                <identifier>RecordDevelop_this_Apex_Trigger__cField</identifier>
+                <identifier>RecordDevelop_this_Apex_Trigger_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Type_of_Task__c}</leftValue>
@@ -155,13 +135,13 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Develop_this_Apex_Class__c</fieldItem>
-                <identifier>RecordDevelop_this_Apex_Class__cField</identifier>
+                <fieldItem>Record.Develop_this_Custom_Field__c</fieldItem>
+                <identifier>RecordDevelop_this_Custom_Field_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Type_of_Task__c}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>ApexClass</rightValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>CustomField</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -173,12 +153,12 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Develop_this_Lightning_Web_Component__c</fieldItem>
-                <identifier>RecordDevelop_this_Lightning_Web_Component__cField</identifier>
+                <identifier>RecordDevelop_this_Lightning_Web_Component_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Type_of_Task__c}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>LightningComponentBundle</rightValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>LightningComponent</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -215,7 +195,7 @@
                     <criteria>
                         <leftValue>{!Record.Type_of_Task__c}</leftValue>
                         <operator>NE</operator>
-                        <rightValue>LightningComponentBundle</rightValue>
+                        <rightValue>LightningComponent</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -231,7 +211,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Fix_Error__c</fieldItem>
-                <identifier>RecordFix_Error__cField</identifier>
+                <identifier>RecordFix_Error_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -241,14 +221,44 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Task_Order_Number__c</fieldItem>
-                <identifier>RecordTask_Order_Number__cField</identifier>
+                <identifier>RecordTask_Order_Number_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-4981bd30-fa32-48b3-9ada-db09f787e84e</name>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Type_of_Task__c</fieldItem>
+                <identifier>RecordType_of_Task_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.User_Story__c</fieldItem>
+                <identifier>RecordUser_Story_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Is_Failure__c</fieldItem>
+                <identifier>RecordIs_Failure__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-9cd7e27f-59a0-4d16-a7a4-beb6263afd0c</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-846113aa-eded-4cfc-bacd-984f75f17690</name>
+        <name>Facet-5c66da33-5432-40bd-86c8-1fcfb67382a5</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -256,7 +266,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-4981bd30-fa32-48b3-9ada-db09f787e84e</value>
+                    <value>Facet-9cd7e27f-59a0-4d16-a7a4-beb6263afd0c</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column</identifier>
@@ -266,13 +276,13 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-846113aa-eded-4cfc-bacd-984f75f17690</value>
+                    <value>Facet-5c66da33-5432-40bd-86c8-1fcfb67382a5</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-d1a99bb0-e750-4485-98ba-de907ca0571f</name>
+        <name>Facet-a072f8e2-d1a2-4a18-a258-9a6b250a2e9d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -280,7 +290,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-d1a99bb0-e750-4485-98ba-de907ca0571f</value>
+                    <value>Facet-a072f8e2-d1a2-4a18-a258-9a6b250a2e9d</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
@@ -294,7 +304,7 @@
                 <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-d3dc4a56-d433-4b2d-948c-8aa32d1780dc</name>
+        <name>Facet-8f566723-a459-48be-bf86-804614dbf092</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -308,7 +318,7 @@
                 <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-06a736ad-6189-4806-8ff8-63713ca805c2</name>
+        <name>Facet-f548a5c9-9d92-48b7-9203-660ad5e70def</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -322,7 +332,7 @@
                 <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-6d72e5d4-beb7-4998-9fcb-01ffd2604731</name>
+        <name>Facet-dc109a35-a422-4ff1-b4d6-d261e91c6622</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -330,7 +340,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-06a736ad-6189-4806-8ff8-63713ca805c2</value>
+                    <value>Facet-f548a5c9-9d92-48b7-9203-660ad5e70def</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column3</identifier>
@@ -340,13 +350,13 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-6d72e5d4-beb7-4998-9fcb-01ffd2604731</value>
+                    <value>Facet-dc109a35-a422-4ff1-b4d6-d261e91c6622</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-68f41f20-6cc0-4b30-a620-9c09d9ddc485</name>
+        <name>Facet-ff492acf-f0b3-4346-bfad-3c8d59ac9691</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -354,7 +364,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-68f41f20-6cc0-4b30-a620-9c09d9ddc485</value>
+                    <value>Facet-ff492acf-f0b3-4346-bfad-3c8d59ac9691</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
@@ -368,7 +378,7 @@
                 <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-8569fa19-be2a-48f0-90c5-838b3f2cf1bb</name>
+        <name>Facet-742735cb-aa05-4868-8d86-26817f60fd8d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -376,7 +386,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-d3dc4a56-d433-4b2d-948c-8aa32d1780dc</value>
+                    <value>Facet-8f566723-a459-48be-bf86-804614dbf092</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -394,7 +404,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-8569fa19-be2a-48f0-90c5-838b3f2cf1bb</value>
+                    <value>Facet-742735cb-aa05-4868-8d86-26817f60fd8d</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -408,7 +418,7 @@
                 <identifier>flexipage_accordionSection2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-0d0a3765-6121-47ef-a4e9-adf6815df393</name>
+        <name>Facet-094c0974-be14-4a63-9b5d-2eb073f6d280</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -416,7 +426,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>accordionSections</name>
-                    <value>Facet-0d0a3765-6121-47ef-a4e9-adf6815df393</value>
+                    <value>Facet-094c0974-be14-4a63-9b5d-2eb073f6d280</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>defaultSectionName</name>
@@ -489,6 +499,63 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>MassChangeOwner</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>User_Story_Task__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>User_Story_Deployment_History__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Result__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>User Story Deployment History</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList</identifier>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>

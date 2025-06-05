@@ -79,7 +79,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>generativePromptTemplate</name>
-                    <value>AI_Engineer_Design_Story</value>
+                    <value></value>
                 </fieldInstanceProperties>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
