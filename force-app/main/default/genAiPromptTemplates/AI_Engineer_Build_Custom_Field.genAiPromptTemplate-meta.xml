@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>AI_Engineer_Build_Custom_Field</developerName>
+    <masterLabel>AI Engineer - Build Custom Field</masterLabel>
+    <relatedEntity>User_Story_Task__c</relatedEntity>
+    <relatedField>User_Story_Task__c.Develop_this_Custom_Field__c</relatedField>
+    <templateVersions>
+        <content>Generate a valid JSON for building the custom field in salesforce which we can deploy using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+3. Dont use the | operators while generating the code.
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for building the custom field in salesforce which we can deploy using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+3. Dont use the | operators while generating the code.
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for building the custom field in salesforce which we can deploy using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+3. Dont use the | operators while generating the code.
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+
+
+Below are the successful code which are deployed as part of developing the user story. See below in case you need to refer the custom field name or apex class name or other reference if needed 
+{!$Flow:AI_Engineer_Get_All_Successful_Tasks.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Get_All_Successful_Tasks</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Get_All_Successful_Tasks</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>AI_Engineer_Develop_the_Task</developerName>
+    <masterLabel>AI Engineer - Develop the Task</masterLabel>
+    <relatedEntity>User_Story_Task__c</relatedEntity>
+    <relatedField>User_Story_Task__c.Develop_this_Task__c</relatedField>
+    <templateVersions>
+        <content>Develop the task based on the below description and type of Task:
+Description : {!$Input:User_Story_Task__c.Task_Description__c}
+Type of Task : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Instructions : 
+1. Provide the output such that i can deploy this code in salesforce
+2. For Deploying i will use Tooling API. Give the code which i can use in Tooling api Body to deploy in salesforce.
+3. Give only the relevant code which can be used in tooling api to develop this task.
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Develop the task based on the below description and type of Task:
+Description : {!$Input:User_Story_Task__c.Task_Description__c}
+Type of Task : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Instructions : 
+1. Provide the output such that i can deploy this code in salesforce
+2. For Deploying i will use Tooling API. Give the code which i can use in Tooling api Body to deploy in salesforce.
+3. Give only the relevant code which can be used in tooling api to develop this task.
+4. Don&apos;t give me instructions how to use it. I need only code such that i can use that to pass it in Tooling api callout
+5. Tooling API uses JSON to deploy the metadata like custom field.
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Develop the task based on the below description and type of Task:
+Description : {!$Input:User_Story_Task__c.Task_Description__c}
+Type of Task : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Output Instructions : 
+1. Provide the output such that i can deploy this code in salesforce using Tooling API
+2. For Deploying i will use Tooling API. Give the code which i can use in Tooling api Body to deploy in salesforce.
+3. Give only the relevant code which can be used in tooling api to develop this task and deploy
+4. Don&apos;t give me instructions how to use it. I need only code such that i can use that to pass it in Tooling api callout
+5. Tooling API uses JSON to deploy the metadata like custom field.
+
+Context: 
+These Tasks are created based on user story acceptance criteria {!$Input:User_Story_Task__c.User_Story__r.Acceptance_Criteria__c} and design is {!$Input:User_Story_Task__c.User_Story__r.Design_this_Story__c}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Develop the task based on the below description and type of Task:
+Description : {!$Input:User_Story_Task__c.Task_Description__c}
+Type of Task : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Output Instructions : 
+1. Provide the output such that i can deploy this code in salesforce using Tooling API
+2. For Deploying i will use Tooling API. Give the code which i can use in Tooling api Body to deploy in salesforce.
+3. Give only the relevant code which can be used in tooling api to develop this task and deploy
+4. Don&apos;t give me instructions how to use it. I need only code such that i can use that to pass it in Tooling api callout
+5. Tooling API uses JSON to deploy the metadata like custom field.
+6. Dont give me the first line which states that json as text. 
+
+Context: 
+These Tasks are created based on user story acceptance criteria {!$Input:User_Story_Task__c.User_Story__r.Acceptance_Criteria__c} and design is {!$Input:User_Story_Task__c.User_Story__r.Design_this_Story__c}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Draft</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Develop the task based on the below description and type of Task:
+Description : {!$Input:User_Story_Task__c.Task_Description__c}
+Type of Task : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Output Instructions : 
+1. Provide the output such that i can deploy this code in salesforce using Tooling API
+2. For Deploying i will use Tooling API. Give the code which i can use in Tooling api Body to deploy in salesforce.
+3. Give only the relevant code which can be used in tooling api to develop this task and deploy
+4. Don&apos;t give me instructions how to use it. I need only code such that i can use that to pass it in Tooling api callout
+5. Tooling API uses JSON to deploy the metadata like custom field.
+6. Dont give me the first line which states that json as text. 
+
+Context: 
+These Tasks are created based on user story acceptance criteria {!$Input:User_Story_Task__c.User_Story__r.Acceptance_Criteria__c} and design is {!$Input:User_Story_Task__c.User_Story__r.Design_this_Story__c}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Develop the task based on the below description and type of Task:
+Description : {!$Input:User_Story_Task__c.Task_Description__c}
+Type of Task : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Output Instructions : 
+1. Provide the output such that i can deploy this code in salesforce using Tooling API
+2. For Deploying i will use Tooling API. Give the code which i can use in Tooling api Body to deploy in salesforce.
+3. Give only the relevant code which can be used in tooling api to develop this task and deploy
+4. Don&apos;t give me instructions how to use it. I need only code such that i can use that to pass it in Tooling api callout
+5. Tooling API uses JSON to deploy the metadata like custom field.
+6. Do not give the first line which states that json as text. 
+7. Do not use Metadata Containers while generating the output.
+
+
+Context: 
+
+These Tasks are created based on user story acceptance criteria {!$Input:User_Story_Task__c.User_Story__r.Acceptance_Criteria__c} and design is {!$Input:User_Story_Task__c.User_Story__r.Design_this_Story__c}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for deploying code using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for deploying code using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for deploying code using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+3. Dont use the | operators while generating the code.
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for deploying code using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+3. Dont use the | operators while generating the code.
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude3Haiku</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for deploying code using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+3. Dont use the | operators while generating the code.
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+
+Below are the successful code which are deployed as part of developing the user story. See below in case you need to refer the custom field name or apex class name or other reference if needed 
+{!$Flow:AI_Engineer_Get_All_Successful_Tasks.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude3Haiku</primaryModel>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Get_All_Successful_Tasks</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Get_All_Successful_Tasks</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a valid JSON for deploying code using Tooling API.
+
+Below is the requirement which need to implement 
+Requirement : {!$Input:User_Story_Task__c.Task_Description__c}
+We need to build : {!$Input:User_Story_Task__c.Type_of_Task__c}
+
+Considerations : 
+Take a look on the below errors and try to fix these issues while generating the JSON : 
+{!$Flow:AllFailureDeploymentTask.Prompt}
+
+
+Output Instructions : 
+1. Validate the JSON Before providing the output
+2. Dont give me the first line which states that json as text. 
+3. Dont use the | operators while generating the code.
+
+See Below the Sample Valid JSONs : 
+{!$Flow:AI_Engineer_Prompt_Setup.Prompt}
+
+Below are the successful code which are deployed as part of developing the user story. See below in case you need to refer the custom field name or apex class name or other reference if needed 
+{!$Flow:AI_Engineer_Get_All_Successful_Tasks.Prompt}
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story_Task__c</definition>
+            <referenceName>Input:User_Story_Task__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude3Haiku</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://AllFailureDeploymentTask</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AllFailureDeploymentTask</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Prompt_Setup</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Prompt_Setup</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://AI_Engineer_Get_All_Successful_Tasks</definition>
+            <parameters>
+                <definition>SOBJECT://User_Story_Task__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>RelatedEntity</parameterName>
+                <valueExpression>{!$Input:User_Story_Task__c}</valueExpression>
+            </parameters>
+            <referenceName>Flow:AI_Engineer_Get_All_Successful_Tasks</referenceName>
+        </templateDataProviders>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
