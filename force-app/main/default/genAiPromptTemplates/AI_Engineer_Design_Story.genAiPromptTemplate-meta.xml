@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Field Generation Template will utilize to design the story</description>
+    <developerName>AI_Engineer_Design_Story</developerName>
+    <masterLabel>AI Engineer - Design Story</masterLabel>
+    <relatedEntity>User_Story__c</relatedEntity>
+    <relatedField>User_Story__c.Design_this_Story__c</relatedField>
+    <templateVersions>
+        <content>Design the user story based on below Acceptance Criteria :
+{!$Input:User_Story__c.Acceptance_Criteria__c}
+
+Instructions : 
+1. Always provide the input in numbered Bullet Points.
+2. Provide the design in Salesforce
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story__c</definition>
+            <referenceName>Input:User_Story__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Design the user story based on below Acceptance Criteria :
+{!$Input:User_Story__c.Acceptance_Criteria__c}
+
+Instructions : 
+1. Always provide the input in numbered Bullet Points.
+2. Provide only the design bullet points in Salesforce
+3. Only provide the task which are only required to develop this story.
+
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story__c</definition>
+            <referenceName>Input:User_Story__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Design the user story based on below Acceptance Criteria :
+{!$Input:User_Story__c.Acceptance_Criteria__c}
+
+Instructions : 
+1. Always provide the input in numbered Bullet Points.
+2. Provide only the design bullet points in Salesforce
+3. Only provide the task which are only required to develop this story.
+4. Please also add type of metadata component API name also separated with hypen 
+
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story__c</definition>
+            <referenceName>Input:User_Story__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Design the user story based on below Acceptance Criteria :
+{!$Input:User_Story__c.Acceptance_Criteria__c}
+
+Instructions : 
+1. Always provide the input in numbered Bullet Points.
+2. Provide only the design bullet points in Salesforce
+3. Only provide the task which are only required to develop this story.
+4. Please also add type of metadata component API name also separated with hypen 
+5. Give the task based on the order they are supposed to be created in Salesforce
+6. Do not end with full stop.
+
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story__c</definition>
+            <referenceName>Input:User_Story__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Draft</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Design the user story based on below Acceptance Criteria :
+{!$Input:User_Story__c.Acceptance_Criteria__c}
+
+Instructions : 
+1. Always provide the input in numbered Bullet Points.
+2. Provide only the design bullet points in Salesforce
+3. Only provide the task which are only required to develop this story.
+4. Please also add type of metadata component API name also separated with hypen 
+5. Give the task based on the order they are supposed to be created in Salesforce
+6. Do not end with full stop.
+
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story__c</definition>
+            <referenceName>Input:User_Story__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Design the user story based on below Acceptance Criteria :
+{!$Input:User_Story__c.Acceptance_Criteria__c}
+
+Instructions : 
+1. Always provide the input in numbered Bullet Points.
+2. Provide only the design bullet points in Salesforce
+3. Only provide the task which are only required to develop this story.
+4. Please also add type of metadata component API name also separated with 2 dollar signs
+5. Give the task based on the order they are supposed to be created in Salesforce
+6. Do not end with full stop.
+
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story__c</definition>
+            <referenceName>Input:User_Story__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Design the user story based on below Acceptance Criteria :
+{!$Input:User_Story__c.Acceptance_Criteria__c}
+
+Instructions : 
+1. Always provide the input in numbered Bullet Points.
+2. Provide only the design bullet points in Salesforce
+3. Only provide the task which are only required to develop this story.
+4. Please also add type of metadata component API name also separated with 4 hypen signs
+5. Give the task based on the order they are supposed to be created in Salesforce
+6. Do not end with full stop.
+
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Story__c</definition>
+            <referenceName>Input:User_Story__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

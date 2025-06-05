@@ -8,6 +8,17 @@
         <members>AllFailureDeploymentTask</members>
         <members>DeployMetadata</members>
         <members>AI_Engineer_Prompt_Setup</members>
+
+
+        <members>AI_Engineer_Get_All_Successful_Tasks</members>
+       <!-- <members>AllEventsDataFlow</members> 
+        <members>FetchAllEvents</members>-->
+        <members>Get_All_Deployed_Task</members>
+        <members>OrderChequeBook_GetCustomerType</members>
+        <members>Review_My_Day_Shikher</members>
+        <members>SummarizeTasks</members>
+        <members>Summarize_Cases</members>
+        <members>SummarizeEvents</members>
         <name>Flow</name>
     </types>    
     <types>
@@ -17,7 +28,7 @@
         <members>Task_Deployment_History__c</members>
         <name>CustomObject</name>
     </types>
-  <!--  <types>
+    <types>
         <members>AI_Engineer_Design_Story</members>
         <members>AI_Engineer_Develop_the_Task</members>
         <members>AI_Engineer_Fix_Issue</members>
@@ -26,7 +37,7 @@
         <members>AI_Engineer_Build_Custom_Field</members>
         <name>GenAiPromptTemplate</name>
     </types>    
-    <types>
+    <!--<types>
         <members>User_Story_Record_Page</members>
         <members>User_Story_Task_Record_Page</members>
         <members>User_Story_Record_Page1</members>

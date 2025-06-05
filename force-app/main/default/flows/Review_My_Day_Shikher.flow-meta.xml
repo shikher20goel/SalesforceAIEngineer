@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+   
+    <assignments>
+        <description>Adds details about events, tasks, leads, opportunities, open opportunities, and forecasting quotas for the user passed into the flow from the prompt template to the prompt instructions.</description>
+        <name>AddDetailsToPromptInstructions</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Add Details to Prompt Instructions</label>
+        <locationX>2288</locationX>
+        <locationY>1838</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>
+Events:  {!EventsInformation} ,
+Leads: {!LeadsInformation},
+Opportunities : {!OpportunitiesInformation},
+Tasks:  {!TasksInformation}
+</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Adds details about the current event record to the EventsInformation variable.</description>
+        <name>AddEventDetailsToVariable</name>
+        <label>Add Event Details to Variable</label>
+        <locationX>264</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>EventsInformation</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>ID - {!IterateOverEvents.Id} | StartTime -  {!IterateOverEvents.StartDateTime} | EndTime -  {!IterateOverEvents.EndDateTime} | Description - {!IterateOverEvents.Description} | Subject - {!IterateOverEvents.Subject} | Location - {!IterateOverEvents.Location}, </stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IterateOverEvents</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds details about the current lead record to the LeadsInformation variable.</description>
+        <name>AddLeadDetailsToVariable</name>
+        <label>Add Lead Detail to Variable</label>
+        <locationX>264</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>LeadsInformation</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Id - {!IterateOverLeads.Id} | Name -  {!IterateOverLeads.Name} | Status -  {!IterateOverLeads.Status} | Company -  {!IterateOverLeads.Company} | AnnualRevenue - {!IterateOverLeads.AnnualRevenue}, </stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IterateOverLeads</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds details about the current opportunity to the OpportunitiesInformation variable.</description>
+        <name>AddOpportunityDetailsToVariable</name>
+        <label>Add Opportunity Details to Variable</label>
+        <locationX>1320</locationX>
+        <locationY>1406</locationY>
+        <assignmentItems>
+            <assignToReference>OpportunitiesInformation</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Id - {!IterateOverOpportunitiesToDisplay.Id} | Name - {!IterateOverOpportunitiesToDisplay.Name} | Amount - {!IterateOverOpportunitiesToDisplay.Amount} | ForecastCategoryName - {!IterateOverOpportunitiesToDisplay.ForecastCategoryName} | StageName - {!IterateOverOpportunitiesToDisplay.StageName} | Probability - {!IterateOverOpportunitiesToDisplay.Probability} | CloseDate - {!IterateOverOpportunitiesToDisplay.CloseDate},</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IterateOverOpportunitiesToDisplay</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds details about the current task record to the TasksInformation variable.</description>
+        <name>AddTaskDetailsToVariable</name>
+        <label>Add Task Details to Variable</label>
+        <locationX>2024</locationX>
+        <locationY>1838</locationY>
+        <assignmentItems>
+            <assignToReference>TasksInformation</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Id - {!IterateOverTasks.Id} | Status - {!IterateOverTasks.Status} | Subject - {!IterateOverTasks.Subject} | Priority - {!IterateOverTasks.Priority}, </stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IterateOverTasks</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds 1 to the LeadCounter variable.</description>
+        <name>IncrementLeadCounter</name>
+        <label>Increment Counter</label>
+        <locationX>748</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>LeadCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsLeadCounterAtOrBelowLimit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds 1 to the OpportunityCounter variable.</description>
+        <name>IncrementOpportunityCounter</name>
+        <label>Increment Counter</label>
+        <locationX>1628</locationX>
+        <locationY>1190</locationY>
+        <assignmentItems>
+            <assignToReference>OpportunityCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsOpportunityCounterAtOrBelowLimit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds 1 to the TaskCounter variable.</description>
+        <name>IncrementTaskCounter</name>
+        <label>Increment Counter</label>
+        <locationX>2156</locationX>
+        <locationY>1622</locationY>
+        <assignmentItems>
+            <assignToReference>TaskCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsTaskCounterAtOrBelowLimit</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <description>Stores the maximum number of leads to retrieve. To customize, change 3 to the value you want.</description>
+        <name>LeadCounterLimit</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the maximum number of opportunities to display. To customize, change 3 to the value you want.</description>
+        <name>OpportunityCounterLimit</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the maximum number of tasks to retrieve. To customize, change 3 to the value you want.</description>
+        <name>TaskCounterLimit</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Determines whether the number in LeadCounter is less than or equal to LeadCounterLimit. To customize the limit, change the value in LeadCounterLimit.</description>
+        <name>IsLeadCounterAtOrBelowLimit</name>
+        <label>Is LeadCounter at or Below Limit?</label>
+        <locationX>748</locationX>
+        <locationY>866</locationY>
+        <defaultConnector>
+            <targetReference>GetOpportunities</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsBelowOrAtLeadLimit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LeadCounter</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>LeadCounterLimit</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AddLeadDetailsToVariable</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines whether the number in OpportunityCounter is less than or equal to OpportunityCounterLimit. To customize the limit, change the value in OpportunityCounterLimit.</description>
+        <name>IsOpportunityCounterAtOrBelowLimit</name>
+        <label>Is OpportunityCounter at or Below Limit?</label>
+        <locationX>1628</locationX>
+        <locationY>1298</locationY>
+        <defaultConnector>
+            <targetReference>GetTasks</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsBelowOrAtOpportunityLimit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityCounter</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>OpportunityCounterLimit</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AddOpportunityDetailsToVariable</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines whether the number in TaskCounter is less than or equal to TaskCounterLimit. To customize the limit, change the value in TaskCounterLimit.</description>
+        <name>IsTaskCounterAtOrBelowLimit</name>
+        <label>Is TaskCounter at or Below Limit?</label>
+        <locationX>2156</locationX>
+        <locationY>1730</locationY>
+        <defaultConnector>
+            <targetReference>AddDetailsToPromptInstructions</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsBelowOrAtTaskLimit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TaskCounter</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>TaskCounterLimit</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AddTaskDetailsToVariable</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates the date that&apos;s 30 days prior to the current date. To use a different date range, change 30 to the value you want to use.</description>
+        <name>PastDateRangeFormula</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()-30</expression>
+    </formulas>
+    <interviewLabel>Review My Day Shikher {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Review My Day Shikher</label>
+    <loops>
+        <description>Repeats action in a loop for each record in Events from GetEvents.</description>
+        <name>IterateOverEvents</name>
+        <label>Iterate Over Events</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <collectionReference>GetEvents</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>AddEventDetailsToVariable</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>GetLeads</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Repeats actions in a loop for each record in Leads from GetLeads.</description>
+        <name>IterateOverLeads</name>
+        <label>Iterate Over Leads</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <collectionReference>GetLeads</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>IncrementLeadCounter</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>GetOpportunities</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Repeats actions in a loop for each record in Opportunities from GetOpportunities.</description>
+        <name>IterateOverOpportunitiesToDisplay</name>
+        <label>Iterate Over Opportunities To Display</label>
+        <locationX>1232</locationX>
+        <locationY>1082</locationY>
+        <collectionReference>GetOpportunities</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>IncrementOpportunityCounter</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>GetTasks</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Repeats actions in a loop for each record in Tasks from GetTasks.</description>
+        <name>IterateOverTasks</name>
+        <label>Iterate Over Tasks</label>
+        <locationX>1936</locationX>
+        <locationY>1514</locationY>
+        <collectionReference>GetTasks</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>IncrementTaskCounter</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AddDetailsToPromptInstructions</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <overriddenFlow>review_my_day__ReviewMyDay</overriddenFlow>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>PromptFlow</processType>
+    <recordLookups>
+        <description>Gets event records scheduled for today for the user passed into the flow from the prompt template and sorts the records in ascending order by StartDateTime. Stores the results in the Events from GetEvents record collection.</description>
+        <name>GetEvents</name>
+        <label>Get Events</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IterateOverEvents</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>GetLeads</targetReference>
+        </faultConnector>
+        <filterLogic>(1 OR 2 OR 3)</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Event</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>StartDateTime</queriedFields>
+        <queriedFields>EndDateTime</queriedFields>
+        <queriedFields>Description</queriedFields>
+        <queriedFields>Subject</queriedFields>
+        <queriedFields>Location</queriedFields>
+        <sortField>StartDateTime</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets unconverted lead records owned by the user passed into the flow from the prompt template and sorts the records in descending order by last activity date. Stores the ID, status, company of the results in the Leads from GetLeads record collection.</description>
+        <name>GetLeads</name>
+        <label>Get Leads</label>
+        <locationX>176</locationX>
+        <locationY>542</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IterateOverLeads</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>GetOpportunities</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Lead</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+        <queriedFields>Company</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>AnnualRevenue</queriedFields>
+        <sortField>AnnualRevenue</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get opportunity records that aren&apos;t closed and are owned by the user passed into the flow from the prompt template and sorts the records in descending order by close date. Stores the results in the Opportunities from GetOpportunities record collection.</description>
+        <name>GetOpportunities</name>
+        <label>Get Opportunities</label>
+        <locationX>1232</locationX>
+        <locationY>974</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IterateOverOpportunitiesToDisplay</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Amount</queriedFields>
+        <queriedFields>ForecastCategoryName</queriedFields>
+        <queriedFields>StageName</queriedFields>
+        <queriedFields>Probability</queriedFields>
+        <queriedFields>CloseDate</queriedFields>
+        <sortField>CloseDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets open tasks with an activity date equal to the current date for the user passed into the flow from the prompt template. Stores the ID, status, subject, and priority of the results in the Tasks from GetTasks record variable.</description>
+        <name>GetTasks</name>
+        <label>Get Tasks</label>
+        <locationX>1936</locationX>
+        <locationY>1406</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IterateOverTasks</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AddDetailsToPromptInstructions</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+        <queriedFields>Subject</queriedFields>
+        <queriedFields>Priority</queriedFields>
+        <sortField>Priority</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <capabilityTypes>
+            <name>PromptTemplateType://sales_assistant__reviewMyDay</name>
+            <capabilityName>PromptTemplateType://sales_assistant__reviewMyDay</capabilityName>
+            <inputs>
+                <name>forecastingQuota</name>
+                <capabilityInputName>forecastingQuota</capabilityInputName>
+                <dataType>String</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+            <inputs>
+                <name>lead</name>
+                <capabilityInputName>lead</capabilityInputName>
+                <dataType>String</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+            <inputs>
+                <name>opportunity</name>
+                <capabilityInputName>opportunity</capabilityInputName>
+                <dataType>String</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+        </capabilityTypes>
+        <connector>
+            <targetReference>GetEvents</targetReference>
+        </connector>
+        <triggerType>Capability</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores the ID, amount, forecast category name, stage name, probability, and close date of open opportunities for the user passed into the flow from the prompt template.</description>
+        <name>AllOpenOpportunitiesInformation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the ID, start time, end time, description, subject, and location of events for the user passed into the flow from the prompt template.</description>
+        <name>EventsInformation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the number of lead records processed in the IncrementLeadCounter loop.</description>
+        <name>LeadCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>Stores the ID, status, company owned by the user passed into the flow from the prompt template.</description>
+        <name>LeadsInformation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the ID, name, amount, forecasting category name, stage name, probability, and close date of open opportunities owned by the user passed into the flow from the prompt template.</description>
+        <name>OpportunitiesInformation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the number of opportunity contact records processed in the IterateOverOpportunityContactRoles loop.</description>
+        <name>OpportunityContactCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the number of opportunity records processed in the IterateOverOpportunitiesToDisplay loop.</description>
+        <name>OpportunityCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>Stores the number of task records processed in the IterateOverTasks loop.</description>
+        <name>TaskCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the ID, status, subject, and priority of tasks for the user passed into the flow from the prompt template.</description>
+        <name>TasksInformation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>
