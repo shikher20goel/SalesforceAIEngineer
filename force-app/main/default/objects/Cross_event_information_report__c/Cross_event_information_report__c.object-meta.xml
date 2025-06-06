@@ -128,46 +128,49 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>User_Story_Task_Record_Page2</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>User_Story_Task_Record_Page2</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Custom_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>User Story Task</label>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Event</label>
     <nameField>
-        <displayFormat>Task-{0000000}</displayFormat>
-        <label>User Story Tasks Name</label>
-        <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <label>Cross event information report</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>User Story Tasks</pluralLabel>
-    <searchLayouts></searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <pluralLabel>Events</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Event_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_end_date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_created_date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Program_manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Venue_Country__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

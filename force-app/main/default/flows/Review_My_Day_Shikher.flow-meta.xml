@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
-   
     <assignments>
         <description>Adds details about events, tasks, leads, opportunities, open opportunities, and forecasting quotas for the user passed into the flow from the prompt template to the prompt instructions.</description>
         <name>AddDetailsToPromptInstructions</name>

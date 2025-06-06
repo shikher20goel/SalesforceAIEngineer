@@ -11,8 +11,6 @@
 
 
         <members>AI_Engineer_Get_All_Successful_Tasks</members>
-       <!-- <members>AllEventsDataFlow</members> 
-        <members>FetchAllEvents</members>-->
         <members>Get_All_Deployed_Task</members>
         <members>OrderChequeBook_GetCustomerType</members>
         <members>Review_My_Day_Shikher</members>
@@ -37,14 +35,14 @@
         <members>AI_Engineer_Build_Custom_Field</members>
         <name>GenAiPromptTemplate</name>
     </types>    
-    <!--<types>
+    <types>
         <members>User_Story_Record_Page</members>
         <members>User_Story_Task_Record_Page</members>
         <members>User_Story_Record_Page1</members>
         <members>User_Story_Task_Record_Page2</members>
         <name>FlexiPage</name>
     </types>
-    -->
+    
       <types>
         <members>UserStoryTrigger</members>
         <name>ApexTrigger</name>
@@ -69,12 +67,18 @@
     <types>
         <members>User_Story__c</members>
         <members>Tooling_API_Request__c</members>
+        <members>Task_Deployment_History__c</members>
         <name>CustomTab</name>
     </types>       
 
     <types>
         <members> User_Story_Task__c.Deploy</members>
         <name>QuickAction</name>
+    </types>
+
+    <types>
+        <members>AI_Engineer_Permission_Set</members>
+        <name>PermissionSet</name>
     </types>
     <version>62.0</version>
 

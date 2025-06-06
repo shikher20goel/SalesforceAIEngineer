@@ -2,75 +2,107 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <assignments>
-        <name>Add_Tasks_Summary</name>
+        <name>AllEvents</name>
         <elementSubtype>AddPromptInstructions</elementSubtype>
-        <label>Add Tasks Summary</label>
-        <locationX>156</locationX>
-        <locationY>458</locationY>
+        <label>All Events</label>
+        <locationX>138</locationX>
+        <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>$Output.Prompt</assignToReference>
             <operator>Add</operator>
             <value>
-                <stringValue>Description : {!Loop_1.Description}
+                <stringValue>Event Name is {!Loop1.Event_name__c} and Event Location for this event is &quot;{!Loop1.Venue_Address_1__c}, {!Loop1.Venue_PostcodeZIP__c}&quot;.
 </stringValue>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_1</targetReference>
+            <targetReference>Loop1</targetReference>
         </connector>
     </assignments>
     <assignments>
-        <name>PromptForAllTasks</name>
+        <name>PromptForAllEvents</name>
         <elementSubtype>AddPromptInstructions</elementSubtype>
-        <label>PromptForAllTasks</label>
-        <locationX>284</locationX>
+        <label>PromptForAllEvents</label>
+        <locationX>314</locationX>
         <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>$Output.Prompt</assignToReference>
             <operator>Add</operator>
             <value>
-                <stringValue>There are no tasks for this Account.
+                <stringValue>There are no Events
 </stringValue>
             </value>
         </assignmentItems>
     </assignments>
     <decisions>
-        <name>Has_Tasks</name>
-        <label>Has Tasks</label>
-        <locationX>176</locationX>
+        <name>has_events</name>
+        <label>Has Events</label>
+        <locationX>182</locationX>
         <locationY>242</locationY>
         <defaultConnector>
-            <targetReference>PromptForAllTasks</targetReference>
+            <targetReference>PromptForAllEvents</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>GetAllTasks</leftValueReference>
+                <leftValueReference>FetchAllEvents</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Loop_1</targetReference>
+                <targetReference>Loop1</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>If_Address_is_present</name>
+        <label>If Address is present</label>
+        <locationX>270</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Loop1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Present</defaultConnectorLabel>
+        <rules>
+            <name>Address_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop1.Venue_Address_1__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop1.Venue_PostcodeZIP__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AllEvents</targetReference>
+            </connector>
+            <label>Address Present</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
-    <interviewLabel>SummarizeTasks {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>SummarizeTasks</label>
+    <interviewLabel>GetAllEvents {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FetchAllEvents</label>
     <loops>
-        <name>Loop_1</name>
-        <label>Loop 1</label>
-        <locationX>68</locationX>
+        <name>Loop1</name>
+        <label>Loop1</label>
+        <locationX>50</locationX>
         <locationY>350</locationY>
-        <collectionReference>GetAllTasks</collectionReference>
+        <collectionReference>FetchAllEvents</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Add_Tasks_Summary</targetReference>
+            <targetReference>If_Address_is_present</targetReference>
         </nextValueConnector>
     </loops>
     <processMetadataValues>
@@ -93,35 +125,29 @@
     </processMetadataValues>
     <processType>PromptFlow</processType>
     <recordLookups>
-        <name>GetAllTasks</name>
-        <label>GetAllTasks</label>
-        <locationX>176</locationX>
+        <name>FetchAllEvents</name>
+        <label>FetchAllEvents</label>
+        <locationX>182</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Has_Tasks</targetReference>
+            <targetReference>has_events</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>AccountId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Task</object>
+        <object>Cross_event_information_report__c</object>
+        <sortField>Venue_Address_1__c</sortField>
+        <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>GetAllTasks</targetReference>
+            <targetReference>FetchAllEvents</targetReference>
         </connector>
         <triggerType>Capability</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>AllTaskDescriptions</name>
         <dataType>String</dataType>
