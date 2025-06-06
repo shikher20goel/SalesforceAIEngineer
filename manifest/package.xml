@@ -80,6 +80,14 @@
         <members>AI_Engineer_Permission_Set</members>
         <name>PermissionSet</name>
     </types>
+
+    <types>
+        <members>User_Story__c-User Story Layout</members>
+        <members>User_Story_Task__c-User Story Task Layout</members>
+        <members>Task_Deployment_History__c-Prompt Setup Layout</members>
+        <members>Tooling_API_Request__c-Prompt Setup Layout</members>
+        <name>Layout</name>
+    </types>
     <version>62.0</version>
 
 </Package>
